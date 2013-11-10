@@ -26,7 +26,7 @@ public final class DataStore{
 	}
 	
 	/** choose collection as it is easy to support for later changes.  an array may not be the most ideal way 
-	 * @author Chris Kestler*/
+	 * @author KestlerC*/
 	public Collection<Professor> getProfessors(){
 		return Arrays.asList(professors);
 	}
