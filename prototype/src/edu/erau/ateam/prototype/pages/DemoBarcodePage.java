@@ -1,6 +1,7 @@
 package edu.erau.ateam.prototype.pages;
 
 @SuppressWarnings("serial")
+/** The page used for demonstrating the barcode scanner. To be fleshed out later*/
 public class DemoBarcodePage extends PlaceHolderPage{
 	@Override
 	protected String getPageName() {

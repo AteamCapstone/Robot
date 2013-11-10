@@ -8,13 +8,13 @@ import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 
-import edu.erau.ateam.prototype.MainFrame.AbstractPage;
 import edu.erau.ateam.prototype.pages.*;
 import static edu.erau.ateam.prototype.Setting.LARGE_FONT;
 
 /** The home page with all the options to go to various demos */
 @SuppressWarnings("serial")
 final class HomePage extends AbstractPage{
+	/** the singleton instance of the home page */
 	static final HomePage instance = new HomePage();
 
 	/** Constructor for the home page */
@@ -39,11 +39,12 @@ final class HomePage extends AbstractPage{
 				setFont(LARGE_FONT);
 				setMaximumSize(new Dimension(600,100));
 				
+				//adds a listener that navigates to the given page
 				addActionListener(new ActionListener(){
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						try {
-							MainFrame.instance.navigateTo(clazz.newInstance());
+							MainFrame.getInstance().navigateTo(clazz.newInstance());
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -51,7 +52,7 @@ final class HomePage extends AbstractPage{
 				});
 			}
 		}
-
+		//adds spacing before the button */
 		add(Box.createVerticalStrut(40));
 		add(new OptionButton());
 	}

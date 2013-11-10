@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import edu.erau.ateam.prototype.LinkedPage;
 import edu.erau.ateam.prototype.Setting;
 
+/** A page used to display "This is a placeholder" on pages that 
+ * are not yet completed.  To be removed in the final version */
 @SuppressWarnings("serial")
 public abstract class PlaceHolderPage extends LinkedPage{
 	protected PlaceHolderPage(){

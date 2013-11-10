@@ -8,10 +8,11 @@ import edu.erau.ateam.prototype.Setting;
 import edu.erau.ateam.prototype.data.Professor;
 
 @SuppressWarnings("serial")
-/** A page that shows information */
+/** A page that shows faculty information.  Currently a placeholder to be fleshed out later*/
 public class ProfessorInformationPage extends LinkedPage{
 	private final Professor professor;
 	
+	/** The constructor for configuring this panel */
 	ProfessorInformationPage(SelectProfessorPage listPage, Professor professor) {
 		super(listPage);
 		this.professor = professor;
@@ -25,6 +26,7 @@ public class ProfessorInformationPage extends LinkedPage{
 		add(placeholder, BorderLayout.CENTER);
 	}
 
+	/** The name of this page is the professor name */
 	@Override
 	protected String getPageName() {
 		return professor.getName();

@@ -2,7 +2,8 @@ package edu.erau.ateam.prototype.pages;
 
 import edu.erau.ateam.prototype.LinkedPage;
 
-/** A leaf page for the color example pages */
+/** A page for the color example pages. 
+ * This is the leaf to all the branches in the ExampleBranchingPage class */
 @SuppressWarnings("serial")
 public final class ExampleLeafPage extends LinkedPage{
 	private final String name;

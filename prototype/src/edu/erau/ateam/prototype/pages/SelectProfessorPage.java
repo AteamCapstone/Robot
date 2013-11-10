@@ -8,7 +8,7 @@ import javax.swing.*;
 import static javax.swing.JScrollBar.VERTICAL;
 import static javax.swing.JScrollPane.*;
 
-import edu.erau.ateam.prototype.DataStore;
+import edu.erau.ateam.prototype.Database;
 import edu.erau.ateam.prototype.LinkedPage;
 import edu.erau.ateam.prototype.MainFrame;
 import static edu.erau.ateam.prototype.Setting.*;
@@ -40,7 +40,7 @@ public class SelectProfessorPage extends LinkedPage{
 		interior.setLayout(new BoxLayout(interior,BoxLayout.Y_AXIS));
 		
 		//a loop that adds buttons and spacing for each professor
-		for(Professor professor : DataStore.getInstance().getProfessors()){
+		for(Professor professor : Database.getInstance().getProfessors()){
 			//adss spacing between each button
 			interior.add(Box.createVerticalStrut(SPACING_SIZE));		
 			//adds buttons for each professor
@@ -69,7 +69,7 @@ public class SelectProfessorPage extends LinkedPage{
 			addActionListener(new ActionListener(){
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					MainFrame.instance.navigateTo(new ProfessorInformationPage(SelectProfessorPage.this, professor));
+					MainFrame.getInstance().navigateTo(new ProfessorInformationPage(SelectProfessorPage.this, professor));
 				}
 			});
 		}

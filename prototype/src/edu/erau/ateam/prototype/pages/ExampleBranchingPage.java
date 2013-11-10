@@ -13,7 +13,7 @@ import edu.erau.ateam.prototype.LinkedPage;
 import edu.erau.ateam.prototype.MainFrame;
 import edu.erau.ateam.prototype.Setting;
 
-/** A page used in the color example */
+/** A page used in the color example. This branches, offering several nav buttons to go to different colored pages*/
 @SuppressWarnings("serial")
 public final class ExampleBranchingPage extends LinkedPage{
 	/** the name of the page */
@@ -68,7 +68,7 @@ public final class ExampleBranchingPage extends LinkedPage{
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					//don't worry about this. this just determines whether to continue to branch or not.
-					MainFrame.instance.navigateTo((level<2) ? new ExampleBranchingPage(ExampleBranchingPage.this,color)
+					MainFrame.getInstance().navigateTo((level<2) ? new ExampleBranchingPage(ExampleBranchingPage.this,color)
 															: new ExampleLeafPage(ExampleBranchingPage.this,color));
 				}
 			});
