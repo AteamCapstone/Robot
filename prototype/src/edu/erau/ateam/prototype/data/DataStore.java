@@ -1,28 +1,28 @@
-package edu.erau.ateam.prototype;
+package edu.erau.ateam.prototype.data;
 
 import java.util.Arrays;
 import java.util.Collection;
-import edu.erau.ateam.prototype.data.Professor;
 
 /** A class used to hardcode the faculty data and store parsed calendar information. */
 public final class DataStore{
 	/** The singleton instance of this class */
 	private static final DataStore instance = new DataStore();
 	
-	/** THe number of fake professors, feel free to remove when adding more complex data */
+	/** THe number of fake facultyMembers, feel free to remove when adding more complex data */
 	static final int examples = 25;
 	
-	/** An array of all professors stored in the system */
-	private final Professor[] professors = new Professor[examples];//10 is an arbitrary number;
+	/** An array of all facultyMembers stored in the system */
+	private final FacultyMember[] facultyMembers = new FacultyMember[examples];//10 is an arbitrary number;
 	
 	/** A constructor that populates the data */
 	private DataStore(){
 		//hardcode data here. feel free to change this up
-		for(int i = 0; i<examples;i++) professors[i] = new Professor("Professor "+(i+1));
+		for(int i = 0; i<examples;i++) facultyMembers[i] = new FacultyMember("FacultyMember "+(i+1),null);
 	}
 	
-	void updateData(){		
-		//NICK add parsing data here.
+	/** Updates all the google calendar information */
+	public void updateScheduleData(){		
+		for(FacultyMember facultyMember : facultyMembers)facultyMember.updateSchedule();
 	}
 	
 	/** gets the singleton instance of the Datastore */
@@ -30,10 +30,10 @@ public final class DataStore{
 		return instance;
 	}
 	
-	/** returns a collection of all professors in the system.
+	/** returns a collection of all facultyMembers in the system.
 	 * choose collection as it is easy to support for later changes.  
 	 * It is currently an array, but this may not be the most ideal way */
-	public Collection<Professor> getProfessors(){
-		return Arrays.asList(professors);
+	public Collection<FacultyMember> getProfessors(){
+		return Arrays.asList(facultyMembers);
 	}
 }

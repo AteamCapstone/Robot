@@ -8,17 +8,17 @@ import javax.swing.*;
 import static javax.swing.JScrollBar.VERTICAL;
 import static javax.swing.JScrollPane.*;
 
-import edu.erau.ateam.prototype.DataStore;
 import edu.erau.ateam.prototype.LinkedPage;
 import edu.erau.ateam.prototype.MainFrame;
 import static edu.erau.ateam.prototype.Setting.*;
-import edu.erau.ateam.prototype.data.Professor;
+import edu.erau.ateam.prototype.data.DataStore;
+import edu.erau.ateam.prototype.data.FacultyMember;
 
-/** a page with a list of professors */
+/** a page with a list of faculty members */
 @SuppressWarnings("serial")
-public class SelectProfessorPage extends LinkedPage{
+public class SelectFacultyPage extends LinkedPage{
 	
-	public SelectProfessorPage(){
+	public SelectFacultyPage(){
 		//adds a scrolling pane
 		JPanel interior = new JPanel();//the jpanel inside the scroller
 		JScrollPane scroller = new JScrollPane(interior);
@@ -40,11 +40,11 @@ public class SelectProfessorPage extends LinkedPage{
 		interior.setLayout(new BoxLayout(interior,BoxLayout.Y_AXIS));
 		
 		//a loop that adds buttons and spacing for each professor
-		for(Professor professor : DataStore.getInstance().getProfessors()){
+		for(FacultyMember facultyMember : DataStore.getInstance().getProfessors()){
 			//adss spacing between each button
 			interior.add(Box.createVerticalStrut(SPACING_SIZE));		
 			//adds buttons for each professor
-			interior.add(new ProfessorButton(professor));
+			interior.add(new ProfessorButton(facultyMember));
 		}
 		//extra spacing at the end
 		interior.add(Box.createVerticalStrut(SPACING_SIZE));
@@ -57,9 +57,9 @@ public class SelectProfessorPage extends LinkedPage{
 	
 	/** a button that will navigate to a page */
 	class ProfessorButton extends JButton{
-		ProfessorButton(final Professor professor){
+		ProfessorButton(final FacultyMember facultyMember){
 			//button settings and sizes
-			super(professor.getName());
+			super(facultyMember.getName());
 			setAlignmentX(0.5f);
 			setFont(LARGE_FONT);
 			setMaximumSize(new Dimension(BUTTON_WIDTH, BUTTON_HEIGHT));
@@ -69,7 +69,7 @@ public class SelectProfessorPage extends LinkedPage{
 			addActionListener(new ActionListener(){
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					MainFrame.getInstance().navigateTo(new ProfessorInformationPage(SelectProfessorPage.this, professor));
+					MainFrame.getInstance().navigateTo(new FacultyInformationPage(SelectFacultyPage.this, facultyMember));
 				}
 			});
 		}
