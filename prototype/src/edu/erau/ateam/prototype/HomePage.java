@@ -17,9 +17,11 @@ import static edu.erau.ateam.prototype.Setting.LARGE_FONT;
 final class HomePage extends AbstractPage{
 	static final HomePage instance = new HomePage();
 
+	/** Constructor for the home page */
 	private HomePage(){
 		setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
 		
+		//various buttons on the home page
 		addButton("JNI Demo", DemoJniPage.class);
 		addButton("Barcode Demo", DemoBarcodePage.class);
 		addButton("Motor Demo", DemoMotorPage.class);
@@ -28,6 +30,7 @@ final class HomePage extends AbstractPage{
 		addButton("Color Examples", ExampleBranchingPage.class);
 	}
 	
+	/** Adds a button and spacing to the home page */
 	private void addButton(final String text, final Class<? extends LinkedPage> clazz){
 		class OptionButton extends JButton{
 			OptionButton(){
