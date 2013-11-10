@@ -57,7 +57,7 @@ public final class MainFrame extends JFrame{
 		
 		Thread.sleep(200);//remove this after calendar parsing is added.
 		
-		splash.close();
+		if(splash!=null)splash.close();//vm argument to add to run configurations: -splash:images/splash.png
 		//END OF SPLASHSCREEN CODE
 		
 		instance.setVisible(true);
