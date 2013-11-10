@@ -7,7 +7,7 @@ import edu.erau.ateam.prototype.data.Professor;
 /** A class used to hardcode the faculty data and store parsed calendar information. */
 public final class DataStore{
 	/** The singleton instance of this class */
-	private static final DataStore instance = new Database();
+	private static final DataStore instance = new DataStore();
 	
 	/** THe number of fake professors, feel free to remove when adding more complex data */
 	static final int examples = 25;
@@ -26,7 +26,7 @@ public final class DataStore{
 	}
 	
 	/** gets the singleton instance of the Datastore */
-	public static DataStoregetInstance(){
+	public static DataStore getInstance(){
 		return instance;
 	}
 	

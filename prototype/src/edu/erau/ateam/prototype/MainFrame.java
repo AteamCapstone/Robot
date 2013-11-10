@@ -51,7 +51,7 @@ public final class MainFrame extends JFrame{
 		//SPLASH SCREEN CODE HERE. Comment it out if it give you trouble 
 		SplashScreen splash = SplashScreen.getSplashScreen();
 		
-		Database.getInstance().updateData();//parses calendar data
+		DataStore.getInstance().updateData();//parses calendar data
 		
 		Thread.sleep(200);//remove this after calendar parsing is added.
 		
