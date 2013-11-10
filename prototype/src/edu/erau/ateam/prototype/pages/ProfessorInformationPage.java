@@ -16,7 +16,7 @@ public class ProfessorInformationPage extends LinkedPage{
 		super(listPage);
 		this.professor = professor;
 		
-		//placeholder code below, @Yuxiang feel free 
+		//placeholder code below, @Jia feel free to delete this
 		setLayout(new BorderLayout());
 		JLabel placeholder = new JLabel(professor.getName()+" information goes here");
 		placeholder.setAlignmentX(0.5f);
