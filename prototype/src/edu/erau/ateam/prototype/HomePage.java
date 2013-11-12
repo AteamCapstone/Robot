@@ -37,7 +37,7 @@ final class HomePage extends AbstractPage{
 				super(text);
 				setAlignmentX(0.5f);
 				setFont(LARGE_FONT);
-				setMaximumSize(new Dimension(600,100));
+				setMaximumSize(new Dimension(Setting.BUTTON_WIDTH,Setting.BUTTON_HEIGHT));
 				
 				//adds a listener that navigates to the given page
 				addActionListener(new ActionListener(){

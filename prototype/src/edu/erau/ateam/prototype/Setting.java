@@ -8,10 +8,10 @@ public final class Setting {
 	private Setting(){}
 	
 	/** Vertical dimension of the screen */
-	public static final int DEFHEIGHT = 1000;
+	public static final int DEFHEIGHT = 750;
 
 	/** Horizontal dimension of the screen */
-	public static final int DEFWIDTH = 768;
+	public static final int DEFWIDTH = 600;
 	
 	/**  Vertical dimension of the Navigation panel*/
 	public static final int NAV_HEIGHT = 40;
@@ -23,7 +23,7 @@ public final class Setting {
 	public static final int BUTTON_HEIGHT = 100;
 	
 	/**  Horizontal dimension of a large button */
-	public static final int BUTTON_WIDTH = 600;
+	public static final int BUTTON_WIDTH = DEFWIDTH-100;
 	
 	/**  Width of a scrollbar */
 	public static final int SCROLLBAR_WIDTH = 50;
@@ -35,6 +35,6 @@ public final class Setting {
 	public static final Font SMALL_FONT = new Font("CONSOLAS",PLAIN,24);
 	
 	/** Large font text size */
-	public static final Font LARGE_FONT = new Font("CONSOLAS",BOLD,36);
+	public static final Font LARGE_FONT = new Font("CONSOLAS",BOLD,24);
 
 }
