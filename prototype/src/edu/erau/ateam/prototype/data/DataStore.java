@@ -17,7 +17,7 @@ public final class DataStore{
 	/** A constructor that populates the data */
 	private DataStore(){
 		//hardcode data here. feel free to change this up
-		for(int i = 0; i<examples;i++) facultyMembers[i] = new FacultyMember("FacultyMember "+(i+1),null);
+		for(int i = 0; i<examples;i++) facultyMembers[i] = new FacultyMember(i+1,"FacultyMember "+(i+1),null);
 	}
 	
 	/** Updates all the google calendar information */

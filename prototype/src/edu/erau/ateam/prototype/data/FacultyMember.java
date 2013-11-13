@@ -4,6 +4,7 @@ package edu.erau.ateam.prototype.data;
 public final class FacultyMember {
 	/** the name of the faculty member */
 	private String name;
+	public int id = 2;
 	
 	private Scheduler scheduler;
 	
@@ -17,8 +18,10 @@ public final class FacultyMember {
 
 	private Schedule schedule = null;
 
-	/** Constructs a class with the given name */
-	public FacultyMember(String name, Scheduler scheduler) {
+	/** Constructs a class with the given name 
+	 * @param i */
+	public FacultyMember(int id, String name, Scheduler scheduler) {
+		this.id = id;
 		this.name = name;
 		this.scheduler = scheduler;
 	}
