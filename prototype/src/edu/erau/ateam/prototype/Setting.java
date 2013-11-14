@@ -1,5 +1,6 @@
 package edu.erau.ateam.prototype;
 
+import java.awt.Dimension;
 import java.awt.Font;
 import static java.awt.Font.*;
 
@@ -24,6 +25,8 @@ public final class Setting {
 	
 	/**  Horizontal dimension of a large button */
 	public static final int BUTTON_WIDTH = DEFWIDTH-100;
+	
+	public static final Dimension BUTTON_SIZE = new Dimension(BUTTON_WIDTH,BUTTON_HEIGHT);
 	
 	/**  Width of a scrollbar */
 	public static final int SCROLLBAR_WIDTH = 50;
