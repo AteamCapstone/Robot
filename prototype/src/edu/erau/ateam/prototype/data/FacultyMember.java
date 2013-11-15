@@ -1,10 +1,14 @@
 package edu.erau.ateam.prototype.data;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 /** A class that holds information about a professor */
 public final class FacultyMember {
 	/** the name of the faculty member */
 	private String name;
 	public int id = 2;
+	private URL feedURL;
 	
 	private Scheduler scheduler;
 	
@@ -16,7 +20,7 @@ public final class FacultyMember {
 		this.scheduler = scheduler;
 	}
 
-	private Schedule schedule = null;
+	private WeeklySchedule schedule = null;
 
 	/** Constructs a class with the given name 
 	 * @param i */
@@ -24,6 +28,12 @@ public final class FacultyMember {
 		this.id = id;
 		this.name = name;
 		this.scheduler = scheduler;
+		try {
+			this.feedURL = new URL("https://www.google.com/calendar/feeds/nickvic1707%40gmail.com/public/full");
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	/** A getter for the professor's name */
@@ -39,14 +49,14 @@ public final class FacultyMember {
 	
 	/** Updates the schedule for this professor */
 	public void updateSchedule(){
-		if(scheduler!=null) setSchedule(scheduler.getSchedule());
+		if(scheduler!=null) setSchedule(scheduler.getSchedule(feedURL));
 	}
 
-	public Schedule getSchedule() {
+	public WeeklySchedule getSchedule() {
 		return schedule;
 	}
 
-	public void setSchedule(Schedule schedule) throws NullPointerException{
+	public void setSchedule(WeeklySchedule schedule) throws NullPointerException{
 		if(schedule == null) throw new NullPointerException();
 		this.schedule = schedule;
 	}
