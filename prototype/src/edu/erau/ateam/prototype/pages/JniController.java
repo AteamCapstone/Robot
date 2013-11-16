@@ -1,7 +1,6 @@
 package edu.erau.ateam.prototype.pages;
 
 import java.io.File;
-import java.util.Random;
 
 /** A class used to interface with C/C++ */
 final class JniController {
