@@ -16,4 +16,17 @@ public class WeeklySchedule {
 	public void addToWeeklySchedule(DailySchedule ds) {
 		week.put(ds.getDay(), ds);
 	}
+	
+	public void printWeeklySchedule() {
+		for (Weekday day : keySet) {
+			DailySchedule ds = week.get(day);
+			for(int i = 0; i < ds.getList().size(); i++) {
+	            Timeslot ts = ds.getList().get(i);
+	            System.out.println(ts.getTitle());
+	            System.out.println(ts.getStartStamp());
+	            System.out.println(ts.getEndStamp());
+	            System.out.println("------------------------------------------------------");
+	        }
+        }
+	}
 }

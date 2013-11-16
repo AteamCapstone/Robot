@@ -65,6 +65,7 @@ public class GoogleCalendarScheduler extends Scheduler {
 			e.printStackTrace();
 		}
 		
+		//parses events to a Timeslot object, add Timeslot to corresponding DailySchedule, add DailySchedule to WeeklySchedule
 		WeeklySchedule ws = new WeeklySchedule();
         Calendar tempCalendar = new GregorianCalendar();
 		for(Weekday day: Weekday.values()){
@@ -87,13 +88,6 @@ public class GoogleCalendarScheduler extends Scheduler {
 			}
 			ws.addToWeeklySchedule(ds);
 		}
-		
-		//Take entries in specified time range and print relevant info
-		
-		
-		//go through feed, create timeslot, insert timeslot in order for the appropriate day
-		
-		// TODO PARSING CODE GOES HERE
-		return null;
+		return ws;
 	}
 }
