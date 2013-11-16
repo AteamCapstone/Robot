@@ -28,6 +28,7 @@ final class HomePage extends AbstractPage{
 		addButton("Sonar Demo", DemoSonarPage.class);
 		addButton("Find a FacultyMember", SelectFacultyPage.class);
 		addButton("Color Examples", ExampleBranchingPage.class);
+		add(Box.createVerticalStrut(40));
 	}
 	
 	/** Adds a button and spacing to the home page */
