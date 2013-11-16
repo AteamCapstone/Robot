@@ -1,6 +1,7 @@
 package edu.erau.ateam.prototype.pages;
 
 import java.io.File;
+import java.util.Random;
 
 /** A class used to interface with C/C++ */
 final class JniController {
@@ -11,10 +12,9 @@ final class JniController {
 	
 	static{
 		try {
-			System.load(new File("PrototypeNative.dll").getAbsolutePath());
+			System.load(new File("PrototypeNative.so").getAbsolutePath());
 		} catch (Error e2) {
-			System.out.println("PrototypeNative.dll not found");
-			e2.printStackTrace();
+			System.out.println("PrototypeNative.so not found");
 		}
 	}
 	
@@ -22,4 +22,6 @@ final class JniController {
 	 * @author KestlerC
 	 */
 	native int demoJni(int x, int y);
+	
+	native float readSonar();
 }
