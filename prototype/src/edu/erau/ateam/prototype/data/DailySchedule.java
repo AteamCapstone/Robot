@@ -1,6 +1,6 @@
 package edu.erau.ateam.prototype.data;
 
-
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,5 +27,15 @@ public class DailySchedule {
 
 	public List<Timeslot> getDailySchedule() {
 		return list;
+	}
+	
+	public void sortDailyScheduler() {
+		Collections.sort(list, new sortTimeslots());
+	}
+	
+	public class sortTimeslots implements java.util.Comparator<Timeslot> {
+		public int compare(Timeslot ts1, Timeslot ts2)  {
+			return ts1.getStartStamp().compareTo(ts2.getStartStamp());
+		}
 	}
 }

@@ -19,7 +19,7 @@ public class FacultyInformationPage extends LinkedPage{
 	private final FacultyMember facultyMember;
 	
 	private String [] Header = {"Time","Monday","Tuesday","Wednesday","Thursday","Friday"}; 
-    private String [] Timer = {"8:00-8:30","8:30-9:00","9:00-9:30","9:30-10:00","10:00-10:30","10:30-11:00",
+    private String [] Time = {"8:00-8:30","8:30-9:00","9:00-9:30","9:30-10:00","10:00-10:30","10:30-11:00",
     		"11:00-11:30","11:30-12:00","12:00-12:30","12:30-13:00","13:00-13:30","13:30-14:00",
     		"14:00-14:30","14:30-15:00","15:00-15:30","15:30-16:00","16:00-16:30","16:30-17:00",
     		"17:00-17:30","17:30-18:00","18:00-18:30","18:30-19:00","19:00-19:30","19:30-20:00"};
@@ -37,11 +37,12 @@ public class FacultyInformationPage extends LinkedPage{
 	FacultyInformationPage(SelectFacultyPage listPage, FacultyMember facultyMember) {
 		super(listPage);
 		this.facultyMember = facultyMember;
+		//populates general info JTable displaying id #, name, room #, and ***current status***
 		info[0][0]=facultyMember.id+"";
 		info[0][1]=nameRoom[facultyMember.id-1][0];
         info[0][2]=nameRoom[facultyMember.id-1][1];
 		for(int i = 0; i < 24; i++){
-			Schedule[i][0]= Timer[i];
+			Schedule[i][0]= Time[i];
 		}
 		
 		for(int j = 1; j < 6;j ++){

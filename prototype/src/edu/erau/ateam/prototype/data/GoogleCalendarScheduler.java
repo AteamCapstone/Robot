@@ -86,6 +86,7 @@ public class GoogleCalendarScheduler extends Scheduler {
 				}
 				
 			}
+			ds.sortDailyScheduler();
 			ws.addToWeeklySchedule(ds);
 		}
 		return ws;

@@ -9,7 +9,7 @@ public final class DataStore{
 	private static final DataStore instance = new DataStore();
 	
 	/** THe number of fake facultyMembers, feel free to remove when adding more complex data */
-	static final int examples = 25;
+	static final int examples = 6;
 	
 	/** An array of all facultyMembers stored in the system */
 	private final FacultyMember[] facultyMembers = new FacultyMember[examples];//10 is an arbitrary number;
@@ -17,7 +17,7 @@ public final class DataStore{
 	/** A constructor that populates the data */
 	private DataStore(){
 		//hardcode data here. feel free to change this up
-		for(int i = 0; i<examples;i++) facultyMembers[i] = new FacultyMember(i+1,"FacultyMember "+(i+1),null);
+		for(int i = 0; i<examples;i++) facultyMembers[i] = new FacultyMember(i+1,"FacultyMember "+(i+1), new GoogleCalendarScheduler());
 	}
 	
 	/** Updates all the google calendar information */

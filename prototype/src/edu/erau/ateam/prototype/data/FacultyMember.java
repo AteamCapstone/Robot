@@ -9,7 +9,8 @@ public final class FacultyMember {
 	private String name;
 	public int id = 2;
 	private URL feedURL;
-	
+	private WeeklySchedule schedule = null;
+
 	private Scheduler scheduler;
 	
 	public Scheduler getScheduler() {
@@ -19,8 +20,6 @@ public final class FacultyMember {
 	public void setScheduler(Scheduler scheduler) {
 		this.scheduler = scheduler;
 	}
-
-	private WeeklySchedule schedule = null;
 
 	/** Constructs a class with the given name 
 	 * @param i */
@@ -32,8 +31,7 @@ public final class FacultyMember {
 			this.feedURL = new URL("https://www.google.com/calendar/feeds/nickvic1707%40gmail.com/public/full");
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
-		}
-		
+		}	
 	}
 	
 	/** A getter for the professor's name */
