@@ -9,7 +9,7 @@ public final class Setting {
 	private Setting(){}
 	
 	/** Vertical dimension of the screen */
-	public static final int DEFHEIGHT = 750;
+	public static final int DEFHEIGHT = 700;
 
 	/** Horizontal dimension of the screen */
 	public static final int DEFWIDTH = 600;
@@ -21,7 +21,7 @@ public final class Setting {
 	public static final int PAGE_HEIGHT = DEFHEIGHT - NAV_HEIGHT-50;
 	
 	/**  Vertical dimension of a large button */
-	public static final int BUTTON_HEIGHT = 100;
+	public static final int BUTTON_HEIGHT = 80;
 	
 	/**  Horizontal dimension of a large button */
 	public static final int BUTTON_WIDTH = DEFWIDTH-100;
