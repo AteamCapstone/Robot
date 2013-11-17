@@ -60,9 +60,11 @@ public class GoogleCalendarScheduler extends Scheduler {
 		try {
 			myResultsFeed = myService.query(myQuery, CalendarEventFeed.class);
 		} catch (IOException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			return null;
 		} catch (ServiceException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
+			return null;
 		}
 		
 		//parses events to a Timeslot object, add Timeslot to corresponding DailySchedule, add DailySchedule to WeeklySchedule

@@ -1,17 +1,16 @@
 package edu.erau.ateam.prototype.pages;
 
 import java.awt.BorderLayout;
-import java.awt.Container;
-import java.util.Random;
 
-import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 import edu.erau.ateam.prototype.LinkedPage;
-import edu.erau.ateam.prototype.Setting;
-import edu.erau.ateam.prototype.data.DataStore;
+import edu.erau.ateam.prototype.data.DailySchedule;
 import edu.erau.ateam.prototype.data.FacultyMember;
+import edu.erau.ateam.prototype.data.Timeslot;
+import edu.erau.ateam.prototype.data.Weekday;
+import edu.erau.ateam.prototype.data.WeeklySchedule;
 
 @SuppressWarnings("serial")
 /** A page that shows faculty information.  Currently a placeholder to be fleshed out later*/
@@ -19,12 +18,11 @@ public class FacultyInformationPage extends LinkedPage{
 	private final FacultyMember facultyMember;
 	
 	private String [] Header = {"Time","Monday","Tuesday","Wednesday","Thursday","Friday"}; 
-    private String [] Time = {"8:00-8:30","8:30-9:00","9:00-9:30","9:30-10:00","10:00-10:30","10:30-11:00",
-    		"11:00-11:30","11:30-12:00","12:00-12:30","12:30-13:00","13:00-13:30","13:30-14:00",
-    		"14:00-14:30","14:30-15:00","15:00-15:30","15:30-16:00","16:00-16:30","16:30-17:00",
-    		"17:00-17:30","17:30-18:00","18:00-18:30","18:30-19:00","19:00-19:30","19:30-20:00"};
+    private String [] Time = {"8:00","8:30","9:00","9:30","10:00","10:30",
+    		"11:00","11:30","12:00","12:30","13:00","13:30",
+    		"14:00","14:30","15:00","15:30","16:00","16:30",
+    		"17:00","17:30","18:00","18:30","19:00","19:30"};
     private String[][] Schedule = new String [24][6];
-    private int [][] temp = new int [24][6];
     private String [] infoHeader = {"No.","Name", "Room No.","Status"};
     private String [][] info = new String [1][4];
     private String [][] nameRoom= {{"Bill","001"},{"Mark","002"},{"William","003"},{"James","004"},
@@ -37,6 +35,7 @@ public class FacultyInformationPage extends LinkedPage{
 	FacultyInformationPage(SelectFacultyPage listPage, FacultyMember facultyMember) {
 		super(listPage);
 		this.facultyMember = facultyMember;
+		WeeklySchedule ws = facultyMember.getSchedule();
 		//populates general info JTable displaying id #, name, room #, and ***current status***
 		info[0][0]=facultyMember.id+"";
 		info[0][1]=nameRoom[facultyMember.id-1][0];
@@ -45,22 +44,34 @@ public class FacultyInformationPage extends LinkedPage{
 			Schedule[i][0]= Time[i];
 		}
 		
-		for(int j = 1; j < 6;j ++){
-			for(int k = 0; k < 24; k ++){
-				temp[k][j] = new Random().nextInt(2);
-				if(temp[k][j]==0){
-					Schedule[k][j]=" ";
+		//Get WeeklySchedule from faculty member object and populate the JTable with the correpsonding information
+		//Go to the following URL to check if JTable displays correctly
+		//https://www.google.com/calendar/embed?src=nickvic1707%40gmail.com&ctz=America/New_York
+		if(ws != null) {
+			int column = 1;
+			for(Weekday day : Weekday.values()) {
+				DailySchedule ds = ws.getDailySchedule(day);
+				for(int i = 0; i < ds.getList().size(); i++) {
+					Timeslot ts = ds.getList().get(i);
+					String temp = ts.formatTimestamp();
+					//find matches and print title to proper Schedule index
+					for(int row = 0; row < Time.length; row++) {
+						if(Time[row].equals(temp)) {
+							Schedule[row][column] = ts.getTitle();
+						}
+					}	
 				}
-				else{Schedule[k][j]="Class";}
+				column++;
 			}
 		}
+		
 		setLayout(new BorderLayout(50,50));
-		JTable scheduleTable =  new JTable(Schedule,Header);
-		JScrollPane JS1=new JScrollPane();
+		JTable scheduleTable = new JTable(Schedule,Header);
+		JScrollPane JS1= new JScrollPane();
 		JS1.setViewportView(scheduleTable);
 		add(JS1, BorderLayout.CENTER);
 		JTable infoTable = new JTable(info,infoHeader);
-		JScrollPane JS2 =new JScrollPane();
+		JScrollPane JS2 = new JScrollPane();
 		JS2.setViewportView(infoTable);
 		add(JS2, BorderLayout.SOUTH);
 		//placeholder code below, @Jia feel free to delete this

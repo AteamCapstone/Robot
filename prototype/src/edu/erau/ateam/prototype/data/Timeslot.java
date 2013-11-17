@@ -31,4 +31,18 @@ public class Timeslot {
 	public boolean isAvailable() {
 		return available;
 	}
+	
+	//build time string for comparison
+	@SuppressWarnings("deprecation")
+	public String formatTimestamp() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(getStartStamp().getHours());
+		sb.append(":");
+		if(getStartStamp().getMinutes() < 10) {
+			sb.append("0" + getStartStamp().getMinutes());
+		} else {
+			sb.append(getStartStamp().getMinutes());
+		}
+		return sb.toString();
+	}
 }

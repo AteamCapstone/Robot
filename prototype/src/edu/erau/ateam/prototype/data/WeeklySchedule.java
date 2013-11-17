@@ -17,6 +17,10 @@ public class WeeklySchedule {
 		week.put(ds.getDay(), ds);
 	}
 	
+	public DailySchedule getDailySchedule(Weekday day) {
+		return week.get(day);
+	}
+	
 	public void printWeeklySchedule() {
 		for (Weekday day : keySet) {
 			DailySchedule ds = week.get(day);
