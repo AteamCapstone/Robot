@@ -3,7 +3,6 @@ package edu.erau.ateam.prototype.pages;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 
 import edu.erau.ateam.prototype.LinkedPage;
@@ -43,11 +42,12 @@ class StateButton extends JRadioButton{
 		setFont(LARGE_FONT.deriveFont(Font.BOLD,36));
 		setPreferredSize(BUTTON_SIZE);
 		setMaximumSize(BUTTON_SIZE);
-		
+
+		if(state == MotorState.STOP)setSelected(true);//make the stop button selected by default
 		//changes the motor state
 		addActionListener(new ActionListener() {
 			@Override
-			public void actionPerformed(ActionEvent arg0) {
+			public void actionPerformed(ActionEvent event) {
 				JniController.instance.setMotorState(state);
 			}
 		});
