@@ -87,8 +87,8 @@ public class DemoSonarPage extends LinkedPage{
 		
 		public void done(){
 			if(timer.isRunning()){
-				colored.setBackground((latest>13)?RED:GREEN);
-				DecimalFormat format = new DecimalFormat("000.00000");//adjust to just one decimal place later
+				colored.setBackground((latest>13)?GREEN:RED);
+				DecimalFormat format = new DecimalFormat("000.00");//adjust to just one decimal place later
 				distance.setText(format.format(latest) + " inches");
 			}
 		}
