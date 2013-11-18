@@ -55,7 +55,6 @@ public final class FacultyMember {
 	}
 
 	public void setSchedule(WeeklySchedule schedule) throws NullPointerException{
-		if(schedule == null) throw new NullPointerException();
 		this.schedule = schedule;
 	}
 }
