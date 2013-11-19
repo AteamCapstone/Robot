@@ -56,11 +56,9 @@ public class FacultyInformationPage extends LinkedPage{
 		SimpleDateFormat df = new SimpleDateFormat("HHmm");
 		String current = df.format(new Date());
 		int currentTime = Integer.parseInt(current);
-		System.out.println(currentTime);
 		//get current day of week
 		Calendar cal = Calendar.getInstance();
 		int w = cal.get(Calendar.DAY_OF_WEEK)-1;
-		System.out.println(w);
 				
 		//Get WeeklySchedule from faculty member object and populate the JTable with the correpsonding information
 		//Go to the following URL to check if JTable displays correctly
@@ -94,8 +92,6 @@ public class FacultyInformationPage extends LinkedPage{
 			while(!(currentTime<timeNum[n+1]&&currentTime>=timeNum[n])){
 				n++;		
 			}
-			System.out.println(Time[n]);
-			System.out.println(w);
 			if(Schedule[n][w].equals("Office Hours")) {
 				status = "Available";
 			}
@@ -105,7 +101,6 @@ public class FacultyInformationPage extends LinkedPage{
 			else {
 				status = "Not available";
 			}
-			//System.out.println(current.getDayNum()]);
 			n=0;
 			}
 		else {	//out of work time
