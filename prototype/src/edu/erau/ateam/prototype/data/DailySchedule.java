@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+/** A class to store sorted Timeslots for a specified day */
 public class DailySchedule {
 	private List<Timeslot> list;
 	private Weekday day;
@@ -29,10 +30,12 @@ public class DailySchedule {
 		return list;
 	}
 	
+	/** sorts List based on comparator*/
 	public void sortDailyScheduler() {
 		Collections.sort(list, new sortTimeslots());
 	}
 	
+	/** compares Timeslot objects by startStamp*/
 	public class sortTimeslots implements java.util.Comparator<Timeslot> {
 		public int compare(Timeslot ts1, Timeslot ts2)  {
 			return ts1.getStartStamp().compareTo(ts2.getStartStamp());

@@ -23,7 +23,7 @@ final class HomePage extends AbstractPage{
 		
 		//various buttons on the home page
 		addButton("JNI Demo", DemoJniPage.class);
-		addButton("Barcode Demo", DemoBarcodePage.class);
+		//addButton("Barcode Demo", DemoBarcodePage.class);
 		addButton("Motor Demo", DemoMotorPage.class);
 		addButton("Sonar Demo", DemoSonarPage.class);
 		addButton("Find a FacultyMember", SelectFacultyPage.class);
