@@ -8,8 +8,6 @@ import java.util.*;
 
 import javax.swing.*;
 
-import edu.erau.ateam.prototype.data.DataStore;
-
 /** The JFrame that holds the entire GUI.  This frame contains a 
  * navigation panel on top and a panel (called a page) below it. 
  * The page can change, which will update the navigation panel.  
@@ -53,9 +51,9 @@ public final class MainFrame extends JFrame{
 		//SPLASH SCREEN CODE HERE. Comment it out if it give you trouble 
 		SplashScreen splash = SplashScreen.getSplashScreen();
 		
-		DataStore.getInstance().updateScheduleData();//parses calendar data
+		//DataStore.getInstance().updateScheduleData();//parses calendar data
 		
-		Thread.sleep(200);//remove this after calendar parsing is added.
+		//Thread.sleep(200);//remove this after calendar parsing is added.
 		
 		if(splash!=null)splash.close();//vm argument to add to run configurations: -splash:images/splash.png
 		//END OF SPLASHSCREEN CODE

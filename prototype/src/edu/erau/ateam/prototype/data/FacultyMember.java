@@ -7,11 +7,10 @@ import java.net.URL;
 public final class FacultyMember {
 	/** the name of the faculty member */
 	private String name;
-	private String roomNum = "###";
-	private String email = "myname@my.erau.edu";
 	public int id = 2;
 	private URL feedURL;
 	private WeeklySchedule schedule = null;
+
 	private Scheduler scheduler;
 	
 	public Scheduler getScheduler() {
@@ -38,14 +37,6 @@ public final class FacultyMember {
 	/** A getter for the professor's name */
 	public String getName() {
 		return name;
-	}
-
-	public String getRoomNum() {
-		return roomNum;
-	}
-	
-	public String getEmail() {
-		return email;
 	}
 
 	/** A setter to change the professor's name, cannot be null */

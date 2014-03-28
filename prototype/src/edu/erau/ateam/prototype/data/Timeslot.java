@@ -1,9 +1,8 @@
-
 package edu.erau.ateam.prototype.data;
+
 
 import java.sql.Timestamp;
 
-/** A class that stores parsed information from Google Calendar feed query */
 public class Timeslot {
 	private String title;
 	private Timestamp startStamp;
@@ -33,19 +32,7 @@ public class Timeslot {
 		return available;
 	}
 	
-	/**
-	 * gets duration of Timeslot in minutes
-	 */
-	@SuppressWarnings("deprecation")
-	public int getDuration() {
-		int hour = getEndStamp().getHours() - getStartStamp().getHours();
-		int min = getEndStamp().getMinutes() - getStartStamp().getMinutes();
-		return (hour*60) + min;
-	}
-	
-	/**
-	 * 	build time string for comparison
-	 */
+	//build time string for comparison
 	@SuppressWarnings("deprecation")
 	public String formatTimestamp() {
 		StringBuilder sb = new StringBuilder();

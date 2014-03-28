@@ -1,4 +1,4 @@
-package edu.erau.ateam.prototype.pages;
+package edu.erau.ateam.prototype.prototype;
 
 @SuppressWarnings("serial")
 /** The page used for demonstrating the barcode scanner. To be fleshed out later*/

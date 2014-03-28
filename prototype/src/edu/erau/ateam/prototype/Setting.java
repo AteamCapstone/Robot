@@ -9,10 +9,13 @@ public final class Setting {
 	private Setting(){}
 	
 	/** Vertical dimension of the screen */
-	public static final int DEFHEIGHT = 700;
+	public static final int DEFHEIGHT = 600;
 
 	/** Horizontal dimension of the screen */
-	public static final int DEFWIDTH = 600;
+	public static final int DEFWIDTH = 800;
+	
+	
+	public static final int LARGE_COMPONENT_WIDTH = 750;
 	
 	/**  Vertical dimension of the Navigation panel*/
 	public static final int NAV_HEIGHT = 40;

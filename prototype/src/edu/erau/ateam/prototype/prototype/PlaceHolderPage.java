@@ -1,4 +1,4 @@
-package edu.erau.ateam.prototype.pages;
+package edu.erau.ateam.prototype.prototype;
 
 import java.awt.BorderLayout;
 
